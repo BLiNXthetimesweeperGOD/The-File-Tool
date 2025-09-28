@@ -18,7 +18,7 @@ from formats.container.RAX  import * #Children of Mana
 from formats.container.NARC import * #Nintendo - NOT ADDED YET
 from formats.container.SARC import * #Nintendo
 
-from formats.container.HOT  import * #Voodoo Vince Remastered - NOT ADDED YET
+from formats.container.HOT  import * #Voodoo Vince Remastered
 
 from formats.container.XIP  import * #Xbox Dashboard
 
@@ -82,6 +82,17 @@ for file in files:
             
             SARC_SaveFiles(SARC, SARC_Nodes, SARC_FileNames, SARC_FileNameHashKey, SARC_DataStartOffset, outPath)
 
+    elif magic == b'HOT ': #Voodoo Vince Remastered HOT container
+        if not os.path.exists(outPath): #Check if the output folder exists. If not, create it.
+            os.makedirs(outPath)
+
+        with open(file, "rb") as HOT:
+            HOT_StartOfFileNameTable, HOT_FileCount = HOT_ReadHeader(HOT)
+            HOT_FileEntries = HOT_ReadFileTable(HOT, HOT_StartOfFileNameTable, HOT_FileCount)
+            HOT_FileNames = HOT_GetFileNames(HOT, HOT_FileEntries)
+
+            HOT_SaveFiles(HOT, HOT_FileNames, HOT_FileEntries, outPath)
+
     elif magic == b'XIP0': #Original Xbox XIP container
         if not os.path.exists(outPath): #Check if the output folder exists. If not, create it.
             os.makedirs(outPath)
@@ -106,7 +117,7 @@ for file in files:
         if fileTools.ext(file).lower() == "xip":
             print(f"This 'xip' file ({file}) is actually an Xbox executable file")
 
-        #Since I had a reason to add this, I might add xbe to the format list eventually
+        #Since I had a reason to add this, I might add xbe to the supported format list eventually
         
     else:
         print(magic)
