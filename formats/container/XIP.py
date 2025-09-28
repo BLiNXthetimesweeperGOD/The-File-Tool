@@ -67,4 +67,8 @@ def XIP_SaveFiles(XIP, XIP_FileInformation, XIP_FileNames, outPath):
 
             with open(outPath+XIP_Name[0], "w+b") as output:
                 output.write(XIP_FileData)
+        else:
+            with open(outPath+XIP_Name[0]+".txt", "w+") as output:
+                text = f"{hex(XIP_FileInformation[XIP_Name[1]][0])}\n{hex(XIP_FileInformation[XIP_Name[1]][1])}\n{XIP_FileInformation[XIP_Name[1]][2]}\n{XIP_FileInformation[XIP_Name[1]][3]}"
+                output.write(text)
         
