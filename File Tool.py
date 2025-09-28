@@ -101,7 +101,13 @@ for file in files:
             XBX_ConvertedPixelData = XBX_ConvertImage(XBX, XBX_ImageDataStartOffset, XBX_ImageDataLength, XBX_CompressionType, XBX_XSize, XBX_YSize)
 
             XBX_SaveImage(XBX_ConvertedPixelData, XBX_XSize, XBX_YSize, output)
-            
+
+    elif magic == b'XBEH': #Xbox Executable
+        if fileTools.ext(file).lower() == "xip":
+            print(f"This 'xip' file ({file}) is actually an Xbox executable file")
+
+        #Since I had a reason to add this, I might add xbe to the format list eventually
+        
     else:
         print(magic)
         
