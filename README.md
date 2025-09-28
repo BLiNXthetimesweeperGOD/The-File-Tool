@@ -5,6 +5,7 @@ This is a tool that unpacks and converts several file formats I've encountered i
 
 ## Supported formats
 - HOG (Bubsy 3D)
+- HOT (Voodoo Vince Remastered)
 - MIT (BLiNX: the Time Sweeper)
 - RAX (Children of Mana)
 - SARC (Nintendo)
@@ -12,6 +13,5 @@ This is a tool that unpacks and converts several file formats I've encountered i
 - XIP (Microsoft Xbox)
 
 ## Planned (but not yet implemented) formats
-- HOT (Voodoo Vince Remastered)
 - NARC (Nintendo DS)
 - XSSB (BLiNX: the Time Sweeper)
