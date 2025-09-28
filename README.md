@@ -8,6 +8,7 @@ This is a tool that unpacks and converts several file formats I've encountered i
 - MIT (BLiNX: the Time Sweeper)
 - RAX (Children of Mana)
 - SARC (Nintendo)
+- XBX (Microsoft Xbox)
 - XIP (Microsoft Xbox)
 
 ## Planned (but not yet implemented) formats
