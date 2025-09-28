@@ -1,4 +1,4 @@
-from codingTools import *
+from libraries.codingTools import *
 
 def Yaz0Header(compressedYaz0File):
     magic = compressedYaz0File.read(4)
@@ -76,3 +76,4 @@ def decompressYaz0(file):
             decompressedYaz0File.write(decompressedData)
 
         return outName, magic #The SARC unpacker should use this name now
+
