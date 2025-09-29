@@ -6,7 +6,7 @@ This is a tool that unpacks and converts several file formats I've encountered i
 The end goal is to have each format split up into easy to read functions. 
 
 
-Feel free to reimplement any part of this code so long as you credit either me or the people/resources listed below/
+Feel free to reimplement any part of this code so long as you credit either me or the people/resources listed below.
 
 ## Supported formats
 - HOG (Bubsy 3D)
