@@ -1,7 +1,12 @@
 # The-File-Tool
 Great name, I know. 
 
-This is a tool that unpacks and converts several file formats I've encountered in the past.
+This is a tool that unpacks and converts several file formats I've encountered in the past. 
+
+The end goal is to have each format split up into easy to read functions. 
+
+
+Feel free to reimplement any part of this code so long as you credit either me or the people/resources listed below/
 
 ## Supported formats
 - HOG (Bubsy 3D)
@@ -40,6 +45,8 @@ Using this is as easy as running "File Tool.py" and selecting a file.
 Files will be output in a folder named after the input file. 
 
 Files are not saved relative to the folder containing the script itself.
+
+
 
 Examples to help explain a bit better:
 
