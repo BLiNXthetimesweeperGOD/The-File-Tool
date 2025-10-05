@@ -149,7 +149,31 @@ class fileTools:
     def writeNewTextFile(file, data): #For use when writing text to a new file
         with open(file, "w+") as outputFile:
             outputFile.write(data)
-    
+
+class ZeroTerminatedString:
+    def __init__(self, file, align=None):
+        self.file = file
+        self.align = align   #Bit width to align to (None for no alignment)
+        
+    def readString(self, offset=None):
+        if offset != None:
+            self.file.seek(offset)
+            
+        data = b''
+        value = b''
+
+        while value != b'\x00':
+            value = self.file.read(1)
+            data += value
+
+        if self.align != None:
+            #Align to specified width
+            unalignedOffset = self.file.tell()
+            alignedOffset = (unalignedOffset + ((self.align//8) - 1)) & ~((self.align//8) - 1)
+            self.file.seek(alignedOffset)
+
+        return data.rstrip(b'\x00').decode("UTF-8")
+
     
 class dialogs:
     """
